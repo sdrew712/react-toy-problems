@@ -5,21 +5,26 @@ const Palindrome = () => {
   const [palindrome, setPalindrome] = useState(null);
 
   const checkPalindrome = (input) => {
-    //create array of inputted text
-    const normalStringArr = input.toLowerCase().split("");
+    //run only if user has inputted text
+    if (input) {
+      //create array of inputted text
+      const normalStringArr = input.toLowerCase().split("");
 
-    //create reversed array of inputted text
-    const reversedStringArr = [...normalStringArr].reverse();
+      //create reversed array of inputted text
+      const reversedStringArr = [...normalStringArr].reverse();
 
-    //make the two arrays strings to compare
-    const normalString = normalStringArr.join();
-    const reversedString = reversedStringArr.join();
+      //make the two arrays strings to compare
+      const normalString = normalStringArr.join();
+      const reversedString = reversedStringArr.join();
 
-    //if they are equal then it is a palindrome
-    if (normalString === reversedString) {
-      setPalindrome(true);
+      //if they are equal then it is a palindrome
+      if (normalString === reversedString) {
+        setPalindrome(true);
+      } else {
+        setPalindrome(false);
+      }
     } else {
-      setPalindrome(false);
+      alert("Input something!");
     }
   };
 
@@ -40,9 +45,7 @@ const Palindrome = () => {
       >
         Check
       </button>
-      <span className="resultsBox">
-        {"Palindrome: " + JSON.stringify(palindrome)}
-      </span>
+      <span className="resultsBox">{"Palindrome: " + palindrome}</span>
     </div>
   );
 };

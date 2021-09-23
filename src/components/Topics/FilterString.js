@@ -20,7 +20,15 @@ const FilterString = () => {
     const namesFiltered = unFilteredArray.filter((name) =>
       name.includes(input)
     );
-    setFilteredArray(namesFiltered);
+    console.log(namesFiltered);
+    //alert if nothing is in namesFiltered array
+    if (namesFiltered.length === 0) {
+      alert("Nothing matches!");
+    }
+    //if array contains results, set state
+    else {
+      setFilteredArray(namesFiltered);
+    }
   };
 
   return (
