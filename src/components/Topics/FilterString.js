@@ -21,8 +21,11 @@ const FilterString = () => {
       name.includes(input)
     );
     console.log(namesFiltered);
-    //alert if nothing is in namesFiltered array
-    if (namesFiltered.length === 0) {
+    //alert if nothing is inputted by user
+    if (input.length === 0) {
+      alert("Please input something!");
+      //alert if nothing is in namesFiltered array
+    } else if (namesFiltered.length === 0) {
       alert("Nothing matches!");
     }
     //if array contains results, set state

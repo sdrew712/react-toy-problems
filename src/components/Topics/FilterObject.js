@@ -12,10 +12,14 @@ const FilterObject = () => {
   const [filteredArray, setFilteredArray] = useState([]);
 
   const objectFilterer = (input) => {
-    let filteredObjects = peopleArr.filter((peopleArr) =>
-      peopleArr.hasOwnProperty(input)
-    );
-    setFilteredArray(filteredObjects);
+    if (input.length === 0) {
+      alert("Input something!");
+    } else {
+      let filteredObjects = peopleArr.filter((peopleArr) =>
+        peopleArr.hasOwnProperty(input)
+      );
+      setFilteredArray(filteredObjects);
+    }
   };
 
   return (

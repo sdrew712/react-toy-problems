@@ -5,22 +5,21 @@ const EvenAndOdd = () => {
   const [oddArray, setOddArray] = useState([]);
   const [userInput, setUserInput] = useState("");
 
-  // useEffect(() => {
-  //   if (userInput.length > 5) {
-  //     console.log(userInput);
-  //   }
-  // }, [userInput]);
-
   const numberSorter = (input) => {
     const numbers = input.split(", ");
     const evenArr = [];
     const oddArr = [];
 
     numbers.forEach((element) => {
+      if (element.length === 0) {
+        alert("Please input something!");
+        return;
+      }
+
       const number = parseInt(element);
 
       if (isNaN(number)) {
-        alert("idiot, that doesn't contain all numbers!");
+        alert("Please input numbers!");
         return;
       }
       if (number % 2 === 0) {

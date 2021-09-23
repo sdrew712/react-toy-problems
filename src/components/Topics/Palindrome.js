@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 const Palindrome = () => {
   const [userInput, setUserInput] = useState("");
-  const [palindrome, setPalindrome] = useState(null);
+  const [palindrome, setPalindrome] = useState("");
 
   const checkPalindrome = (input) => {
     //run only if user has inputted text
@@ -19,9 +19,9 @@ const Palindrome = () => {
 
       //if they are equal then it is a palindrome
       if (normalString === reversedString) {
-        setPalindrome(true);
+        setPalindrome(JSON.stringify(true));
       } else {
-        setPalindrome(false);
+        setPalindrome(JSON.stringify(false));
       }
     } else {
       alert("Input something!");
