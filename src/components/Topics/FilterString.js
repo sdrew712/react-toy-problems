@@ -47,6 +47,7 @@ const FilterString = () => {
         onChange={({ target }) => {
           setUserInput(target.value);
         }}
+        placeholder="text"
       />
       <button
         className="confirmationButton"

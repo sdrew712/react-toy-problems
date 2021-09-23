@@ -22,6 +22,7 @@ const Sum = () => {
         onChange={({ target }) => {
           setNumber1(target.value);
         }}
+        placeholder="number"
       />
       <input
         type="number"
@@ -30,6 +31,7 @@ const Sum = () => {
         onChange={({ target }) => {
           setNumber2(target.value);
         }}
+        placeholder="number"
       />
       <button
         className="confirmationButton"

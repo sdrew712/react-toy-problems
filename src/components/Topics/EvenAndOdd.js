@@ -43,6 +43,7 @@ const EvenAndOdd = () => {
         onChange={({ target }) => {
           setUserInput(target.value);
         }}
+        placeholder="1, 2, 3, 4"
       />
       <button
         className="confirmationButton"
