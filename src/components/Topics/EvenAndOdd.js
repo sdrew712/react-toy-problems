@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 const EvenAndOdd = () => {
   const [evenArray, setEvenArray] = useState([]);
@@ -13,7 +13,7 @@ const EvenAndOdd = () => {
 
   const numberSorter = (input) => {
     const numbers = input.split(", ");
-    let evenArr = [];
+    const evenArr = [];
     const oddArr = [];
 
     numbers.forEach((element) => {
@@ -51,8 +51,12 @@ const EvenAndOdd = () => {
       >
         Split
       </button>
-      <span className="resultsBox">{evenArray}</span>
-      <span className="resultsBox">{oddArray}</span>
+      <span className="resultsBox">
+        {"Evens: " + JSON.stringify(evenArray, null, 10)}
+      </span>
+      <span className="resultsBox">
+        {"Odds: " + JSON.stringify(oddArray, null, 10)}
+      </span>
     </div>
   );
 };
