@@ -2,11 +2,9 @@ import React, { useState } from "react";
 
 const Palindrome = () => {
   const [userInput, setUserInput] = useState("");
-  const [palindrome, setPalindrome] = useState("");
+  const [palindrome, setPalindrome] = useState(null);
 
   const checkPalindrome = (input) => {
-    let isPalindrome = false;
-
     //create array of inputted text
     const normalStringArr = input.toLowerCase().split("");
 
@@ -19,10 +17,10 @@ const Palindrome = () => {
 
     //if they are equal then it is a palindrome
     if (normalString === reversedString) {
-      isPalindrome = true;
+      setPalindrome(true);
+    } else {
+      setPalindrome(false);
     }
-
-    setPalindrome(JSON.stringify(isPalindrome));
   };
 
   return (
@@ -42,7 +40,9 @@ const Palindrome = () => {
       >
         Check
       </button>
-      <span className="resultsBox">{"Palindrome: " + palindrome}</span>
+      <span className="resultsBox">
+        {"Palindrome: " + JSON.stringify(palindrome)}
+      </span>
     </div>
   );
 };
