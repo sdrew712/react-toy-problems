@@ -1,26 +1,26 @@
 import React, { useState } from "react";
 
-let objArr = [
+let peopleArr = [
   { name: "Jimmy Joe", title: "Hack0r", age: 12 },
   { name: "Jeremy Schrader", age: 24, hairColor: "brown" },
   { name: "Carly Armstrong", title: "CEO" },
 ];
 
 const FilterObject = () => {
-  const [unFilteredArray] = useState(objArr);
+  const [unFilteredArray] = useState(peopleArr);
   const [userInput, setUserInput] = useState("");
   const [filteredArray, setFilteredArray] = useState([]);
 
   const objectFilterer = (input) => {
-    let filteredObjects = objArr.filter((objArr) =>
-      objArr.hasOwnProperty(input)
+    let filteredObjects = peopleArr.filter((peopleArr) =>
+      peopleArr.hasOwnProperty(input)
     );
     setFilteredArray(filteredObjects);
   };
 
   return (
     <div className="puzzleBox filterObjectPB">
-      <h4>FilterObject</h4>
+      <h4>Filter Object</h4>
       <span className="puzzleText">
         {JSON.stringify(unFilteredArray, null, 10)}
       </span>
