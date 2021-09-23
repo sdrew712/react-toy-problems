@@ -15,7 +15,7 @@ const EvenAndOdd = () => {
 
   const numberSorter = (input) => {
     const numbers = input.split(", ");
-    const evenArr = [];
+    let evenArr = [];
     const oddArr = [];
 
     numbers.forEach((element) => {
@@ -26,14 +26,14 @@ const EvenAndOdd = () => {
         return;
       }
       if (number % 2 === 0) {
-        evenArr.push(number);
+        evenArr.push(number + " ");
       } else {
-        oddArr.push(number);
+        oddArr.push(number + " ");
       }
     });
 
     setEvenArray(evenArr);
-    console.log(evenArr);
+    setOddArray(oddArr);
   };
 
   return (
@@ -50,8 +50,8 @@ const EvenAndOdd = () => {
       <button className="" onClick={() => numberSorter(userInput)}>
         Split
       </button>
-      <span className="resultsBox"></span>
-      <span className="resultsBox"></span>
+      <span className="resultsBox">{evenArray}</span>
+      <span className="resultsBox">{oddArray}</span>
     </div>
   );
 };
