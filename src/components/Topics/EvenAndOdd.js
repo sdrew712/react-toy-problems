@@ -5,8 +5,6 @@ const EvenAndOdd = () => {
   const [oddArray, setOddArray] = useState([]);
   const [userInput, setUserInput] = useState("");
 
-  console.log({ evenArray });
-
   // useEffect(() => {
   //   if (userInput.length > 5) {
   //     console.log(userInput);
@@ -47,7 +45,10 @@ const EvenAndOdd = () => {
           setUserInput(target.value);
         }}
       />
-      <button className="" onClick={() => numberSorter(userInput)}>
+      <button
+        className="confirmationButton"
+        onClick={() => numberSorter(userInput)}
+      >
         Split
       </button>
       <span className="resultsBox">{evenArray}</span>
