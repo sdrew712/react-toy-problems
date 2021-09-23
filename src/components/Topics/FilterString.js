@@ -16,10 +16,19 @@ const FilterString = () => {
   const [userInput, setUserInput] = useState("");
   const [filteredArray, setFilteredArray] = useState([]);
 
+  const nameFilter = (input) => {
+    const namesFiltered = unFilteredArray.filter((name) =>
+      name.includes(input)
+    );
+    setFilteredArray(namesFiltered);
+  };
+
   return (
     <div className="puzzleBox filterStringPB">
       <h4>Filter String</h4>
-      <span className="puzzleText"></span>
+      <span className="puzzleText">
+        {JSON.stringify(unFilteredArray, null, 10)}
+      </span>
       <input
         type="text"
         className="inputLine"
@@ -28,8 +37,15 @@ const FilterString = () => {
           setUserInput(target.value);
         }}
       />
-      <button className="confirmationButton"></button>
-      <span className="resultsBox filterStringRB"></span>
+      <button
+        className="confirmationButton"
+        onClick={() => nameFilter(userInput)}
+      >
+        Filter
+      </button>
+      <span className="resultsBox filterStringRB">
+        {"Filtered Names: " + JSON.stringify(filteredArray, null, 10)}
+      </span>
     </div>
   );
 };
