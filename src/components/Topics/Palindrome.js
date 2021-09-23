@@ -3,7 +3,7 @@ import React from "react";
 const Palindrome = () => {
   return (
     <div>
-      <p>Hello World5</p>
+      <p>Palindrome</p>
     </div>
   );
 };

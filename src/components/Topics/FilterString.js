@@ -3,7 +3,7 @@ import React from "react";
 const FilterString = () => {
   return (
     <div>
-      <p>Hello World4</p>
+      <p>FilterString</p>
     </div>
   );
 };

@@ -3,7 +3,7 @@ import React from "react";
 const TopicBrowser = () => {
   return (
     <div>
-      <p>Hello World</p>
+      <p>TopicBrowser</p>
     </div>
   );
 };

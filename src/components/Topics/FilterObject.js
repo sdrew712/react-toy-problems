@@ -3,7 +3,7 @@ import React from "react";
 const FilterObject = () => {
   return (
     <div>
-      <p>Hello World3</p>
+      <p>FilterObject</p>
     </div>
   );
 };
